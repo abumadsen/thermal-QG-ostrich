@@ -158,12 +158,10 @@ prior.m4.5 <- list(
          G2=list(V        = diag(3),
                  nu        = 2.002),
          G3=list(V        = diag(3),
-                 nu        = 2.002),
-         G4=list(V        = diag(3),   
                  nu        = 2.002)))
 
 m4 <- MCMCglmm(cbind(cbind(NeggsTot, NoEggsTot), ColdTol_z,ColdTol_z2) ~ trait-1 + Pop.fem*trait + Pop.male + Age.fem_z,
-               random = ~ us(trait):damid + us(trait):year_damid + idh(trait):enclosure + idh(trait):year,
+               random = ~ us(trait):damid + idh(trait):enclosure + idh(trait):year,
                rcov = ~us(trait):units,
                data   = repro_cold,
                family = c("multinomial2",rep("gaussian",2)),
@@ -175,7 +173,7 @@ m4 <- MCMCglmm(cbind(cbind(NeggsTot, NoEggsTot), ColdTol_z,ColdTol_z2) ~ trait-1
 ### Supplementary Table 5: Test of stabilizing selection for heat resilience
 
 m5 <- MCMCglmm(cbind(cbind(NeggsTot, NoEggsTot), HeatTol_z,HeatTol_z2) ~ trait-1 + Pop.fem*trait + Pop.male + Age.fem_z,
-               random = ~ us(trait):damid + us(trait):year_damid + idh(trait):enclosure + idh(trait):year,
+               random = ~ us(trait):damid + idh(trait):enclosure + idh(trait):year,
                rcov = ~us(trait):units,
                data   = repro_heat,
                family = c("multinomial2",rep("gaussian",2)),
@@ -201,12 +199,10 @@ prior.m6.7 <- list(
          G3=list(V        = diag(3),
                  nu        = 2.002),
          G4=list(V        = diag(3),   
-                 nu        = 2.002),
-         G5=list(V        = diag(3),   
                  nu        = 2.002)))
 
 m6 <- MCMCglmm(cbind(cbind(NeggsTot, NoEggsTot), ColdTol_z,ColdTol_z2) ~ trait-1 + Pop.fem*trait + Pop.male + Age.fem_z,
-               random = ~ us(trait):damid + us(trait):year_damid + us(trait):animal + idh(trait):enclosure + idh(trait):year,
+               random = ~ us(trait):damid + us(trait):animal + idh(trait):enclosure + idh(trait):year,
                rcov = ~us(trait):units,
                data   = repro_cold,
                family = c("multinomial2",rep("gaussian",2)),
@@ -220,7 +216,7 @@ m6 <- MCMCglmm(cbind(cbind(NeggsTot, NoEggsTot), ColdTol_z,ColdTol_z2) ~ trait-1
 ### Supplementary Table 7: Test of stabilizing selection for heat resilience
 
 m7 <- MCMCglmm(cbind(cbind(NeggsTot, NoEggsTot), HeatTol_z,HeatTol_z2) ~ trait-1 + Pop.fem*trait + Pop.male + Age.fem_z,
-               random = ~ us(trait):damid + us(trait):year_damid + us(trait):animal + idh(trait):enclosure + idh(trait):year,
+               random = ~ us(trait):damid + us(trait):animal + idh(trait):enclosure + idh(trait):year,
                rcov = ~us(trait):units,
                data   = repro_heat,
                family = c("multinomial2",rep("gaussian",2)),
@@ -441,12 +437,10 @@ prior.m15.16 <- list(
          G3=list(V        = diag(3),
                  nu        = 2.002),
          G4=list(V        = diag(3),   
-                 nu        = 2.002),
-         G5=list(V        = diag(3),   
                  nu        = 2.002)))
 
 m22 <- MCMCglmm(cbind(cbind(NeggsTot, NoEggsTot),ColdTolFC_z,ColdTolFC_z2) ~ trait-1 + Pop.fem*trait + Pop.male + Age.fem_z,
-                random = ~ us(trait):damid + us(trait):year_damid + us(trait):animal + idh(trait):enclosure + idh(trait):year,
+                random = ~ us(trait):damid + us(trait):animal + idh(trait):enclosure + idh(trait):year,
                 rcov = ~us(trait):units,
                 data   = repro_cold,
                 family = c("multinomial2",rep("gaussian",2)),
@@ -459,7 +453,7 @@ m22 <- MCMCglmm(cbind(cbind(NeggsTot, NoEggsTot),ColdTolFC_z,ColdTolFC_z2) ~ tra
 ### Supplementary Table 16: Additional test of stabilizing selection for heat tolerance
 
 m23 <- MCMCglmm(cbind(cbind(NeggsTot, NoEggsTot), HeatTolFC_z,HeatTolFC_z2) ~ trait-1 + Pop.fem*trait + Pop.male + Age.fem_z,
-                random = ~ us(trait):damid + us(trait):year_damid + us(trait):animal + idh(trait):enclosure + idh(trait):year,
+                random = ~ us(trait):damid + us(trait):animal + idh(trait):enclosure + idh(trait):year,
                 rcov = ~us(trait):units,
                 data   = repro_heat,
                 family = c("multinomial2",rep("gaussian",2)),
@@ -484,12 +478,10 @@ prior.m17.18 <- list(
          G2=list(V        = diag(3),
                  nu        = 2.002),
          G3=list(V        = diag(3),
-                 nu        = 2.002),
-         G4=list(V        = diag(3),   
                  nu        = 2.002)))
 
 m24 <- MCMCglmm(cbind(cbind(NeggsTot, NoEggsTot), ColdTolFC_z,ColdTolFC_z2) ~ trait-1 + Pop.fem*trait + Pop.male + Age.fem_z,
-                random = ~ us(trait):damid + us(trait):year_damid + idh(trait):enclosure + idh(trait):year,
+                random = ~ us(trait):damid + idh(trait):enclosure + idh(trait):year,
                 rcov = ~us(trait):units,
                 data   = repro_cold,
                 family = c("multinomial2",rep("gaussian",2)),
@@ -502,7 +494,7 @@ m24 <- MCMCglmm(cbind(cbind(NeggsTot, NoEggsTot), ColdTolFC_z,ColdTolFC_z2) ~ tr
 
 
 m25 <- MCMCglmm(cbind(cbind(NeggsTot, NoEggsTot), HeatTolFC_z,HeatTolFC_z2) ~ trait-1 + Pop.fem*trait + Pop.male + Age.fem_z,
-                random = ~ us(trait):damid + us(trait):year_damid + idh(trait):enclosure + idh(trait):year,
+                random = ~ us(trait):damid + idh(trait):enclosure + idh(trait):year,
                 rcov = ~us(trait):units,
                 data   = repro_heat,
                 family = c("multinomial2",rep("gaussian",2)),
